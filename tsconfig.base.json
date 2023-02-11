@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@script-test/dep1": ["libs/dep1/src/index.ts"],
+      "@script-test/dep2": ["libs/dep2/src/index.ts"],
+      "@script-test/script": ["libs/script/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
