@@ -1,0 +1,46 @@
+{
+  "name": "script2",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/script2/src",
+  "projectType": "library",
+  "targets": {
+    "process": {
+      "executor": "nx:run-commands",
+
+      "options": { "command": "node dist/libs/script2/src/index.js" },
+      "dependsOn": ["build"]
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/script2",
+        "main": "libs/script2/src/index.ts",
+        "tsConfig": "libs/script2/tsconfig.lib.json",
+        "assets": ["libs/script2/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/script2/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/script2/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

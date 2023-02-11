@@ -17,7 +17,9 @@
     "paths": {
       "@script-test/dep1": ["libs/dep1/src/index.ts"],
       "@script-test/dep2": ["libs/dep2/src/index.ts"],
-      "@script-test/script": ["libs/script/src/index.ts"]
+      "@script-test/dep3": ["libs/dep3/src/index.ts"],
+      "@script-test/script": ["libs/script/src/index.ts"],
+      "@script-test/script2": ["libs/script2/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
